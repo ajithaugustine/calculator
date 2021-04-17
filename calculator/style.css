@@ -1,0 +1,10 @@
+.row{
+    padding: 5px;
+}
+#btns{
+   padding: 10px;
+   margin-left: 5px;
+}
+.display{
+    pointer-events:none
+}

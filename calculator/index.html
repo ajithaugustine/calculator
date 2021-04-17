@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calbody">
+        <!-- display -->
+        <div class="display">
+            <input type="text" id="dis" >
+            <label for="" id="disp">result</label>
+
+        </div>
+        <!-- keys -->
+        <div class="keys">
+            <div class="row">
+                <button id="btns" onclick="clicks(7)">7</button>
+                <button id="btns" onclick="clicks(8)">8</button>
+                <button id="btns" onclick="clicks(9)">9</button>
+                <button id="btns" onclick="clicks('/')">/</button>
+            </div>
+            <div class="row">
+                <button id="btns" onclick="clicks(4)">4</button>
+                <button id="btns" onclick="clicks(5)">5</button>
+                <button id="btns" onclick="clicks(6)">6</button>
+                <button id="btns" onclick="clicks('*')">*</button>
+            </div>
+            <div class="row">
+                <button id="btns" onclick="clicks(1)">1</button>
+                <button id="btns" onclick="clicks(2)">2</button>
+                <button id="btns" onclick="clicks(3)">3</button>
+                <button id="btns" onclick="clicks('-')">-</button>
+            </div>
+            <div class="row">
+                <button id="btns" onclick="clicks(0)">0</button>
+              
+                <button id="btns" onclick="clicks('.')"> .</button>
+                <button id="btns" onclick="result('=')">=</button>
+                <button id="btns" onclick="clicks('+')">+</button><br>
+                <button id="btns" onclick="wipe()">c</button>
+            </div>
+           
+        </div>
+
+    </div>
+    
+<script>
+    function clicks(val){
+       console.log(+val)
+      document.getElementById("dis").value+=val
+    }
+function wipe(){
+    document.getElementById("dis").value=''
+
+
+}
+function result(){
+    var text=document.getElementById("dis").value
+    var result=eval(text)
+    document.getElementById("dis").value=result
+    var ab=document.getElementById("disp")
+   ab.innerText=(`the result is ${result}`)
+ 
+   ab.style.color=("red")
+    
+}
+
+
+</script>
+</body>
+
+</html>
